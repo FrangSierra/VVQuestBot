@@ -3,7 +3,7 @@ require("dotenv").config()
 const Keyv = require('keyv');
 const fs = require("fs");
 
-const quest = JSON.parse(fs.readFileSync(`./quests/memesOfBoreas.json`, "utf-8"))
+const quest = JSON.parse(fs.readFileSync(`./quests/shields/shieldsOfArcadia.json`, "utf-8"))
 
 const client = new Discord.Client({
     intents: [

@@ -3,7 +3,8 @@ const handleQuest = async (bot, message) => {
     const user = message.author
     const currentQuestStatus = await storage.get(user.id)
 
-    console.log(`New Message from ${user.n}`)
+    console.log(`New Message ${message.content} from ${user.tag}`)
+    
     if (currentQuestStatus.questStatus >= quest.riddles.length - 1) {
         await message.reply("Thanks for participating! Join to the next quest whenever its announced")
         return

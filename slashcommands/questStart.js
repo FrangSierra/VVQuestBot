@@ -1,3 +1,4 @@
+const {MessageEmbed, MessageAttachment} = require("discord.js");
 const run = async (bot, interaction) => {
 
     const {client, quest, storage} = bot
@@ -15,13 +16,25 @@ const run = async (bot, interaction) => {
         console.log(client.data)
         const message = await interaction.channel.send(quest.intro)
 
-        const collector = message.createReactionCollector({filter, time: 60000});
+        const collector = message.createReactionCollector({filter, time: 600000});
 
         collector.on('collect', (reaction, user) => {
             console.log(`Collected ${reaction.emoji.name} from ${user.tag}`);
             if (reaction.emoji.name === '🔥') {
-                storage.set(user.id, {"questStatus": 0})
-                user.send(quest.riddles[0].message)
+                try {
+                    storage.set(user.id, {"questStatus": 0})
+                    user.send(quest.riddles[0].message)
+
+                    const img = quest.riddles[0].img
+                    img.forEach((item => {
+                        if (item) {
+                            const attachment = new MessageAttachment(item.url)
+                            user.send({files: [attachment]})
+                        }
+                    }))
+                } catch (e) {
+                    console.log(`Error sending a message to user ${user.tag}`);
+				}
             }
         });
 

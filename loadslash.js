@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 require("dotenv").config()
 const fs = require("fs");
 
-const quest = JSON.parse(fs.readFileSync(`./quests/memesOfBoreas.json`, "utf-8"))
+const quest = JSON.parse(fs.readFileSync(`./quests/shields/shieldsOfArcadia.json`, "utf-8"))
 
 const client = new Discord.Client({
     intents: [
@@ -21,6 +21,7 @@ let bot = {
 client.loadSlashCommands = (bot, reload) => require("./handlers/slashcommands")(bot, reload)
 client.loadSlashCommands(bot, false)
 
+//const guildId = "989207976751534090"
 const guildId = "1036578630219874326"
 
 client.on("ready", async () => {
