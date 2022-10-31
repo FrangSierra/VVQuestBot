@@ -1,0 +1,19 @@
+{
+  "title": "Memes of Boreas",
+  "intro": "Welcome Mortals to another edition of Memes of Boreas! Your favorite set of adventures across the verse. The quest will last 3hour from now and everyone who wanna join would need to react with :fire: to this message. After doing so the Riddle bot will send you a DM with the first riddle. Good luck!",
+  "riddles": [
+    {
+      "message": "First message. How much is 1+1",
+      "answer": "2",
+      "hint": "Dont be silly"
+    },
+    {
+      "message": "Second message. How much is 2*0",
+      "answer": "0",
+      "hint": "Do u really ask a god for this?"
+    },
+    {
+      "message": "Third message. The last riddle is upon you. Meet me on the vulcanverse at "
+    }
+  ]
+}
