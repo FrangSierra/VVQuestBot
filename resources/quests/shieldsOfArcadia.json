@@ -1,0 +1,67 @@
+{
+    "title": "The Shields of Arcadia",
+    "description": "Arcadia prepares for war",
+    "allowSkip": true,
+    "emojiMenu": ":shield:",
+    "emojiId": "%F0%9F%9B%A1%EF%B8%8F",
+    "enableSuccessMessages": true,
+    "enableFailureMessages": true,
+    "delayBetweenAnswers" : 5000,
+    "interactions": [
+        {
+            "imgs": ["./resources/imgs/shields/shields_of_arcadia.jpg","./resources/imgs/shields/compass.jpg"],
+            "message": "Our time in Arcadia is coming to a close, and we must prepare for our trip to the dark side of the Vulcan Verse, Hades.\n\nSafety is of the upmost importance, and we must be well equipped. \nI have heard rumour of a secret cache of enchanted shields, but the path to find them is tricky.\n\nFollow the North road until you find four stone arches surrounding a fire pit. \nThis meeting place, once frequented by a group of Arcadian outlaws has now fallen into ruin.\n\nCount the rocks around the fire and then consult your compass. How many were there?",
+            "possibleAnswers": ["6"],
+            "hints": ["The meeting place is on the Eastern side of the road"],
+            "customSuccessTexts": ["You count well, that is correct!", "Your knowledge exceeds that of the great Neswulf, master of lore! \nWell done mortal!", "Jamie would be proud, congratulations!"],
+            "requireAnswer": true
+        },
+        {
+            "message": "Head through the trees, past Don Quijote's house and SirDrinks' settlement until you reach an old outlook known as the High Steps. \nClimb to the top and look to the North to find your next destination. A raised platform, marked by two Arcadian banners. \nUsed by Arcadian generals to watch their soldiers train, this viewing platform has seen much bloodshed.\n\n Count the chairs for me and refer to your compas again in order to see your next objective.",
+            "possibleAnswers": ["8"],
+            "hints": ["You are looking for a tower of steps."],
+            "requireAnswer": true
+        },
+        {
+            "message": "Eight chairs for eight generals, long since dead.\n\nConsulting your compass, you will see a famous landmark, high on a hill, go there. \nClimb the steps and pay tribute to the Gods, we will need their blessings in Hades. \n\nThis shrine is seldom used anymore and flowers have started to overgrow. \nIt is said that these blooms contain magical properties.\n\n Take note of the colour of these blooms and let me know the answer.",
+            "possibleAnswers": ["purple"],
+            "hints": ["It's not blue, yellow or green"],
+            "requireAnswer": true
+        },
+        {
+            "imgs": ["./resources/imgs/shields/druids_shrine.jpg"],
+            "message": "The view here is spectacular, and if you look around at the surrounding countryside you will see our nest destination, marked by a blue X. \n\nIt is rumoured that a valuable treasure was buried here, try your luck at foraging and tell me what you found. \n\nSend me a picture of it to DangerMous#6766 and I will provide you with the next clue.",
+            "possibleAnswers": ["iron"],
+            "requireAnswer": true
+        },
+        {
+            "message": "It seems you are used to foraging these lands! \n\nMove 5 plots to the west from your actual position, then 2 plots South.\n\nThis new training ground, The Olympus Run, is designed to test only the strongest warriors. \nIt combines parkour, a maze and a tower climb and will prepare you for anything you might find in battle. \n\nClimb to the top of the tower and face South. \n\nSend me a screenshot of the views to @DangerMous#6766 and I will provide you with the next clue.",
+            "possibleAnswers": ["red"],
+            "customSuccessTexts": ["Your fitness is worthy of it's own tale, mortal!", "You're as strong as Floyd, congratulations!", "Even the legendary Tsukasa would have trouble beating you!"],
+            "requireAnswer": true
+        },
+        {
+            "message": "On the horizon you will see another popular Arcadian landmark, where you will find a bearded statue.\nHe's either cross-eyed with wine or something seems to have caught his eye. \nFollow the direction of hiz gaze carefully, and discover a creature, saddled and ready for war. \nFamiliarise yourself with this beast, as you may need his service in the future.\n\nAfter you do, could you let me know what plot the creature was on?",
+            "possibleAnswers": ["1234"],
+            "hints": ["You are looking for an elephant on the border of Arcadia and Notus."],
+            "requireAnswer": true
+        },
+        {
+            "message": "Head West, to Vulcans final resting place, where the festival of Vulcan, 'The Vulcanalia' is being celebrated. \nEach summer when the heat places crops and granaries at risk of burning, local folk create bonfires in honour of Vulcan. \nSome of these can still be seen, burning upon his hammer.\n\nCount the fires and remember that number, you will need it. \nHow many fires were there?",
+            "possibleAnswers": ["18"],
+            "hints": ["The statue of Vulcan was built by legendary architect, Acadian and is near the eastern wall of Vulcan City."],
+            "requireAnswer": true
+        },
+        {
+            "message": "Now begins the long trek North to the coast, head to King Lykaon's Den, located in the ruins North of Deep Forest. \nClimb atop the highest point of these ruins (the East Wall), turn North-East and locate your final destination in the distance.\n\n Upon arrival, you will need to seek out Nirena. \nShe has bought us many supplies, most importantly though are the shields.\n\n How many shields have Nirena bring with her mortal?",
+            "possibleAnswers": ["26"],
+            "hints": ["Did you check both sides?"],
+            "requireAnswer": true
+        },
+        {
+            "message": "That should be more than enough for our small band of warriors to reak havoc in Hades. \n\nWell done mortal! \nReturn to me at plot 5278 and claim your prize.",
+            "possibleAnswers": [],
+            "imgs": ["./resources/imgs/shields/shield_reward.jpg"]
+        }
+    ]
+}

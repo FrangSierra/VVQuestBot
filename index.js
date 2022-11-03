@@ -1,49 +1,25 @@
-const Discord = require("discord.js")
-require("dotenv").config()
-const Keyv = require('keyv');
-const fs = require("fs");
+import {Intents} from "discord.js"
+import "dotenv/config"
+import Bot from "./core/Bot.js"
+import Keyv from "keyv";
+import {SlashCommandStringOption} from "@discordjs/builders";
 
-const quest = JSON.parse(fs.readFileSync(`./quests/shields/shieldsOfArcadia.json`, "utf-8"))
+//Initialize memory storage. Use a databse in the future
+const keyv = new Keyv();
+//keyv.on('error', err => console.error('Keyv connection error:', err));
 
-const client = new Discord.Client({
-    intents: [
-        "GUILDS",
-        "GUILD_MESSAGES",
-        "GUILD_MESSAGE_REACTIONS",
-        "DIRECT_MESSAGES"
-    ],
+const client = new Bot({
+    storage: keyv,
+    owners: ["169562543293988866"],
+    intents: [Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILDS, Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.DIRECT_MESSAGE_REACTIONS],
+    prefix: "!",
     partials: [
         'CHANNEL', // Required to receive DMs
     ]
 })
+client.loadEvents()
+client.loadCommands()
+client.loadServerCommands()
+client.loadButtonInteractionEvents()
 
-const keyv = new Keyv();
-
-keyv.on('error', err => console.error('Keyv connection error:', err));
-
-let bot = {
-    client,
-    prefix: "!",
-    owners: ["169562543293988866"],
-    storage: keyv,
-    quest: quest
-}
-
-client.commands = new Discord.Collection()
-client.events = new Discord.Collection()
-client.slashcommands = new Discord.Collection()
-client.buttons = new Discord.Collection()
-
-client.loadEvents = (bot, reload) => require("./handlers/events")(bot, reload)
-client.loadCommands = (bot, reload) => require("./handlers/commands")(bot, reload)
-client.loadSlashCommands = (bot, reload) => require("./handlers/slashcommands")(bot, reload)
-client.loadButtons = (bot, reload) => require("./handlers/buttons")(bot, reload)
-
-client.loadEvents(bot, false)
-client.loadCommands(bot, false)
-client.loadSlashCommands(bot, false)
-client.loadButtons(bot, false)
-
-module.exports = bot
-
-client.login(process.env.TOKEN)
+client.start(process.env.TOKEN)

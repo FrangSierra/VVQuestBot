@@ -1,0 +1,25 @@
+{
+    "title": "Mortal, where is my Goat?",
+    "description": "DangerMous has lost his goat. 😱",
+    "questImage" : "./quests/goat/img/mortalGoat.png",
+    "delayBetweenAnswers" : 5000,
+    "allowSkip": false,
+    "emojiMenu": ":goat:",
+    "emojiId": "%F0%9F%90%90",
+    "enableSuccessMessages": false,
+    "enableFailureMessages": true,
+    "interactions": [
+        {
+            "message": "So, where is my goat Mortal?",
+            "requireAnswer": true,
+            "possibleAnswers": ["1995", "1994"],
+            "hints": ["I refuse to play your Chinese food mind games", "I'm sensing something very Canadian about this place"],
+            "customSuccessTexts": ["Well done Mortal. I will teach this little bastard to behave", "Thanks Mortal. Now I'm one step closer of my own goats Jumanji"],
+            "customFailureTexts": ["Dude, this is a llama", "This is just a mailman"]
+        },
+        {
+            "message": "After 50 llamas you found my goat! Amazing!",
+            "requireAnswer": false
+        }
+    ]
+}

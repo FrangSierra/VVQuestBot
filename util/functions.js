@@ -1,9 +1,13 @@
-const fs = require('fs');
+import fs from "fs"
 
-const getFiles = (path, ending) => {
+export const getTimestampInMilliseconds = () => {
+    return Math.floor(Date.now())
+}
+
+export const getFiles = (path, ending) => {
     return fs.readdirSync(path).filter(f=> f.endsWith(ending))
 }
 
-module.exports = {
-    getFiles
+export function interpretEmoji(s) {
+    return eval("(function(){ return '" + s + "'})()");
 }
